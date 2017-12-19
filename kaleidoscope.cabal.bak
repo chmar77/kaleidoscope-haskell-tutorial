@@ -1,0 +1,69 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 4ac63236e42c6f85cd81403365a218376e297c0936af9f239cac79e984f81009
+
+name:           kaleidoscope
+version:        0.1.0.0
+synopsis:       Short description of your package
+description:    Please see the README on Github at <https://github.com/githubuser/kaleidoscope#readme>
+homepage:       https://github.com/githubuser/kaleidoscope#readme
+bug-reports:    https://github.com/githubuser/kaleidoscope/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2017 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/kaleidoscope
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base                 >=4.7 && <5
+    , haskeline            >= 0.7.1.2
+    , llvm-hs              >= 4.0.0.0
+    , llvm-hs-pure         >= 4.0.0.0
+    , parsec               >= 3.1
+    , mtl                  >= 2.1.3
+    , transformers         >= 0.3.0.0 && < 0.6
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_kaleidoscope
+  default-language: Haskell2010
+
+executable kaleidoscope-exe
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , kaleidoscope
+  other-modules:
+      Paths_kaleidoscope
+  default-language: Haskell2010
+
+test-suite kaleidoscope-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , kaleidoscope
+  other-modules:
+      Paths_kaleidoscope
+  default-language: Haskell2010
